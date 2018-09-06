@@ -1,0 +1,12 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<ul>
+@foreach (var database in Model.Databases)
+{
+    <li><a asp-controller="Databases" asp-action="Get" asp-route-name="@database.Name">@database.Name</a></li>
+}
+</ul>

@@ -1,0 +1,13 @@
+@model AdmInflux.Models.DatabaseViewModel
+
+@{
+    ViewBag.Title = $"Database: {Model.Name}";
+}
+
+<ul>
+@foreach (var measurement in Model.Measurements)
+{
+    <li><a asp-controller="Measurements" asp-action="Get" asp-route-database="@Model.Name" asp-route-measurement="@measurement.Name">@measurement.Name</a></li>
+}
+</ul>
+
