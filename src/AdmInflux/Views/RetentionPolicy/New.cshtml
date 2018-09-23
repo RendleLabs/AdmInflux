@@ -1,0 +1,25 @@
+@model AdmInflux.Models.NewRetentionPolicyViewModel
+
+@{
+    ViewBag.Title = "New Retention Policy";
+    Layout = "_Layout";
+}
+
+<h2>New Retention Policy</h2>
+
+<form method="post" asp-action="Post" asp-route-server="@Model.Server" asp-route-database="@Model.Database">
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" required/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Duration">Duration:</label>
+        <input asp-for="Duration" class="form-control" required/>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShardDuration">Shard Duration:</label>
+        <input asp-for="ShardDuration" class="form-control" required/>
+        <span class="form-text">Must be less than or equal to Duration</span>
+    </div>
+    <button class="btn btn-primary" type="submit">Create</button>
+</form>

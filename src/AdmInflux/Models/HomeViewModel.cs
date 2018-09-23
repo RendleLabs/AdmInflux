@@ -6,6 +6,6 @@ namespace AdmInflux.Models
 {
     public class HomeViewModel
     {
-        public List<Database> Databases { get; set; }
+        public IList<ServerViewModel> Servers { get; set; }
     }
 }

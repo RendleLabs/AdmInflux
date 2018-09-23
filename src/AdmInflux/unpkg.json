@@ -1,0 +1,77 @@
+{
+  "bootswatch/darkly": {
+    "version": "4.1.3",
+    "files": [
+      {
+        "file": "/dist/darkly/bootstrap.css",
+        "cdn": "https://unpkg.com/bootswatch@4.1.3/dist/darkly/bootstrap.css",
+        "local": "wwwroot/lib/bootswatch/darkly/bootstrap.css",
+        "integrity": "sha384-s0DuLRz0xfIwuO+e/X1E+OmAFfptiDHFSCoxHKTPaCJQHNM6a3Zw6rClvl+dbOIj"
+      },
+      {
+        "file": "/dist/darkly/bootstrap.min.css",
+        "cdn": "https://unpkg.com/bootswatch@4.1.3/dist/darkly/bootstrap.min.css",
+        "local": "wwwroot/lib/bootswatch/darkly/bootstrap.min.css",
+        "integrity": "sha384-w+yWASP3zYNxxvwoQBD5fUSc1tctKq4KUiZzxgkBSJACiUp+IbweVKvsEhMI+gz7"
+      }
+    ]
+  },
+  "vue": {
+    "version": "2.5.17",
+    "files": [
+      {
+        "file": "/dist/vue.js",
+        "cdn": "https://unpkg.com/vue@2.5.17/dist/vue.js",
+        "local": "wwwroot/lib/vue/vue.js",
+        "integrity": "sha384-vGq6VlJ/rGDK5hwCZhgtrb5j4nOanwgWgBSe9anrJGQHqCgkBo45u6lAxlVR0U+Q"
+      },
+      {
+        "file": "/dist/vue.min.js",
+        "cdn": "https://unpkg.com/vue@2.5.17/dist/vue.min.js",
+        "local": "wwwroot/lib/vue/vue.min.js",
+        "integrity": "sha384-9MzmvphdUvLZJKasjD7VqYE4SqffhZDOwDTMyokP2tx+fjBo59ljvrlgUAaaME44"
+      }
+    ]
+  },
+  "bootstrap-vue": {
+    "version": "2.0.0-rc.11",
+    "files": [
+      {
+        "file": "/dist/bootstrap-vue.css",
+        "cdn": "https://unpkg.com/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.css",
+        "local": "wwwroot/lib/bootstrap-vue/bootstrap-vue.css",
+        "integrity": "sha384-YZ0+OmKDKnqX/fb/Vd0q0fxCl2r/AmElQUhxcCIoHNtRCdf6UsNp3q0uycw55dpZ"
+      },
+      {
+        "file": "/dist/bootstrap-vue.js",
+        "cdn": "https://unpkg.com/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.js",
+        "local": "wwwroot/lib/bootstrap-vue/bootstrap-vue.js",
+        "integrity": "sha384-NxHEYNXAESulZOtV7C7clVFe90y6HHd0eujHpkg8rWRRN513H33AMhdNf6Z9fcmG"
+      },
+      {
+        "file": "/dist/bootstrap-vue.js.map",
+        "cdn": "https://unpkg.com/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.js.map",
+        "local": "wwwroot/lib/bootstrap-vue/bootstrap-vue.js.map",
+        "integrity": "sha384-k3vkHRvu6i+Ebbb8UMO2wpU01bj9V/3GSfK5Q7qLRJX+9MbeOu5ZS9+d5lUi8VV8"
+      },
+      {
+        "file": "/dist/bootstrap-vue.min.css",
+        "cdn": "https://unpkg.com/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.min.css",
+        "local": "wwwroot/lib/bootstrap-vue/bootstrap-vue.min.css",
+        "integrity": "sha384-iKrE+0BJolLMqdtCEGvRTSBiopP7KLJ2Sze+fDvkdz2Yf9ee7GB01Rf1lgJhF24y"
+      },
+      {
+        "file": "/dist/bootstrap-vue.min.js",
+        "cdn": "https://unpkg.com/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.min.js",
+        "local": "wwwroot/lib/bootstrap-vue/bootstrap-vue.min.js",
+        "integrity": "sha384-X9ZbKGJtUGEQyYHLFQbBBI9QuLWyMj+Oq+u6KMnkm9nGiPi487GLw9i2rubzWuvK"
+      },
+      {
+        "file": "/dist/bootstrap-vue.min.js.map",
+        "cdn": "https://unpkg.com/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.min.js.map",
+        "local": "wwwroot/lib/bootstrap-vue/bootstrap-vue.min.js.map",
+        "integrity": "sha384-FBA3LHVbdI9pAU49kczuJhb4NK0HyAiA7H+3jEzqLuR/CBJ/QlxI+s0nfEfJVM8A"
+      }
+    ]
+  }
+}

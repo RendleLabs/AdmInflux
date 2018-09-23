@@ -1,0 +1,31 @@
+@model AdmInflux.Models.ServerViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h1>Databases:</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        @foreach (var database in Model.Databases)
+        {
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <a class="text" asp-controller="Databases" asp-action="Get" asp-route-server="@Model.Name" asp-route-database="@database.Name">@database.Name</a>
+                    </h3>
+                </div>
+                <div class="card-body">
+                    @database.SeriesCardinality.Count measurements with @database.SeriesCardinality.Sum(c => c.Count) series
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

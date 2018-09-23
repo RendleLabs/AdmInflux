@@ -2,7 +2,14 @@ version: '3'
 
 services:
   influxdb:
-    image: influxdb:1.6.1-alpine
+    image: influxdb:1.6.2-alpine
     ports:
-      - 8086:8086
-    
+    - 8086:8086
+  chronograf:
+    image: chronograf:1.6.2-alpine
+    ports:
+    - 8888:8888
+    depends_on:
+    - influxdb
+    environment:
+      INFLUXDB_URL: http://influxdb:8086

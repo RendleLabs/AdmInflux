@@ -15,10 +15,10 @@ namespace AdmInflux.Controllers
             _client = client;
         }
 
-        [HttpGet("{database}/{measurement}")]
-        public async Task<IActionResult> Get(string database, string measurement)
+        [HttpGet("{server}/{database}/{measurement}")]
+        public async Task<IActionResult> Get(string server, string database, string measurement)
         {
-            var series = await _client.ListSeries("localhost", database, measurement).ConfigureAwait(false);
+            var series = await _client.Series.List(server, database, measurement).ConfigureAwait(false);
             var vm = new MeasurementViewModel {Name = measurement, Series = series};
             return View(vm);
         }

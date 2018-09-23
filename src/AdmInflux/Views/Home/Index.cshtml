@@ -4,9 +4,21 @@
     ViewData["Title"] = "Home Page";
 }
 
-<ul>
-@foreach (var database in Model.Databases)
-{
-    <li><a asp-controller="Databases" asp-action="Get" asp-route-name="@database.Name">@database.Name</a></li>
-}
-</ul>
+<div class="row">
+    <div class="col-12">
+        <h1>Servers:</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        @foreach (var server in Model.Servers)
+        {
+            <div class="card">
+                <h3>
+                    <a class="text" asp-controller="Servers" asp-action="Get" asp-route-server="@server.Name">@server.Name</a>
+                </h3>
+            </div>
+        }
+    </div>
+</div>

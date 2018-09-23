@@ -4,10 +4,23 @@
     ViewBag.Title = $"Database: {Model.Name}";
 }
 
+<h2>Retention Policies</h2>
+<p>
+    <a asp-controller="RetentionPolicy" asp-action="New" asp-route-server="@Model.Server" asp-route-database="@Model.Name">New Retention Policy...</a>
+</p>
 <ul>
-@foreach (var measurement in Model.Measurements)
-{
-    <li><a asp-controller="Measurements" asp-action="Get" asp-route-database="@Model.Name" asp-route-measurement="@measurement.Name">@measurement.Name</a></li>
-}
+    @foreach (var retentionPolicy in Model.RetentionPolicies)
+    {
+        <li>@retentionPolicy.Name</li>
+    }
 </ul>
 
+<h2>Measurements</h2>
+<ul>
+    @foreach (var measurement in Model.Measurements)
+    {
+        <li>
+            <a asp-controller="Measurements" asp-action="Get" asp-route-database="@Model.Name" asp-route-measurement="@measurement.Name">@measurement.Name</a>
+        </li>
+    }
+</ul>

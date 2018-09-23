@@ -1,11 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using AdmInflux.Client;
+using AdmInflux.Client.Models;
 using AdmInflux.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdmInflux.Controllers
 {
-    [Route("databases")]
+    [Route("servers/{server}/databases")]
     public class DatabasesController : Controller
     {
         private readonly InfluxClient _client;
@@ -15,11 +17,21 @@ namespace AdmInflux.Controllers
             _client = client;
         }
 
-        [HttpGet("{name}")]
-        public async Task<IActionResult> Get(string name)
+        [HttpGet("{database}")]
+        public async Task<IActionResult> Get(string server, string database)
         {
-            var measurements = await _client.ListMeasurements("localhost", name).ConfigureAwait(false);
-            var vm = new DatabaseViewModel {Name = name, Measurements = measurements};
+            var (measurements, retentionPolicies) = await Tasks.Multi(
+                _client.Measurements.List(server, database),
+                _client.RetentionPolicies.List(server, database)
+                ).ConfigureAwait(false);
+            
+            var vm = new DatabaseViewModel
+            {
+                Server = server,
+                Name = database, 
+                Measurements = measurements ?? Array.Empty<Measurement>(),
+                RetentionPolicies = retentionPolicies ?? Array.Empty<RetentionPolicy>()
+            };
             return View(vm);
         }
     }
