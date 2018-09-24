@@ -8,7 +8,7 @@ namespace AdmInflux.Models
         public string Server { get; set; }
         public string Name { get; set; }
         public IList<Cardinality> SeriesCardinality { get; set; }
-        public IList<Measurement> Measurements { get; set; }
+        public MeasurementSeriesViewModel[] Measurements { get; set; }
         public IList<RetentionPolicy> RetentionPolicies { get; set; }
     }
 }

@@ -1,26 +1,73 @@
+@using AdmInflux.Client
 @model AdmInflux.Models.DatabaseViewModel
 
 @{
     ViewBag.Title = $"Database: {Model.Name}";
 }
 
-<h2>Retention Policies</h2>
-<p>
-    <a asp-controller="RetentionPolicy" asp-action="New" asp-route-server="@Model.Server" asp-route-database="@Model.Name">New Retention Policy...</a>
-</p>
-<ul>
-    @foreach (var retentionPolicy in Model.RetentionPolicies)
-    {
-        <li>@retentionPolicy.Name</li>
-    }
-</ul>
+<div class="row">
+    <div class="col-12">
+        <h3>@Model.Name</h3>
+    </div>
+</div>
 
-<h2>Measurements</h2>
-<ul>
-    @foreach (var measurement in Model.Measurements)
-    {
-        <li>
-            <a asp-controller="Measurements" asp-action="Get" asp-route-database="@Model.Name" asp-route-measurement="@measurement.Name">@measurement.Name</a>
-        </li>
-    }
-</ul>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Retention Policies</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Duration</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var retentionPolicy in Model.RetentionPolicies)
+                    {
+                        <tr>
+                            <td>@retentionPolicy.Name @(retentionPolicy.Default ? "(default)" : "")</td>
+                            <td>@(Durations.TryParse(retentionPolicy.Duration, out var ts) ? ts.ToDurationString() : retentionPolicy.Duration)</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-sm btn-success" asp-controller="RetentionPolicy" asp-action="New" asp-route-server="@Model.Server" asp-route-database="@Model.Name">New Retention Policy...</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Measurements</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Series</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var measurement in Model.Measurements)
+                    {
+                        <tr>
+                            <td>@measurement.Measurement</td>
+                            <td>@measurement.Count</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

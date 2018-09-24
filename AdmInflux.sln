@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{463FED
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdmInflux.Client", "src\AdmInflux.Client\AdmInflux.Client.csproj", "{8D6130C9-6F01-41C5-B789-D5E16F76232D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BF4AA891-4F48-4B91-B83A-C8F7A3934230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdmInflux.Client.Tests", "test\AdmInflux.Client.Tests\AdmInflux.Client.Tests.csproj", "{65607EF8-9FAF-4518-832D-1A9BFCA0D183}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,9 +55,22 @@ Global
 		{8D6130C9-6F01-41C5-B789-D5E16F76232D}.Release|x64.Build.0 = Release|Any CPU
 		{8D6130C9-6F01-41C5-B789-D5E16F76232D}.Release|x86.ActiveCfg = Release|Any CPU
 		{8D6130C9-6F01-41C5-B789-D5E16F76232D}.Release|x86.Build.0 = Release|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Debug|x64.Build.0 = Debug|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Debug|x86.Build.0 = Debug|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Release|x64.ActiveCfg = Release|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Release|x64.Build.0 = Release|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Release|x86.ActiveCfg = Release|Any CPU
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2BD96464-297B-42A3-AA86-E576354F429D} = {3735FB66-5BE9-4E30-9D99-9316315A2A3E}
 		{8D6130C9-6F01-41C5-B789-D5E16F76232D} = {3735FB66-5BE9-4E30-9D99-9316315A2A3E}
+		{65607EF8-9FAF-4518-832D-1A9BFCA0D183} = {BF4AA891-4F48-4B91-B83A-C8F7A3934230}
 	EndGlobalSection
 EndGlobal

@@ -10,4 +10,10 @@ namespace AdmInflux.Models
         public string Name { get; set; }
         public List<Series> Series { get; set; }
     }
+
+    public class MeasurementSeriesViewModel
+    {
+        public string Measurement { get; set; }
+        public int Count { get; set; }
+    }
 }

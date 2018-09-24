@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using AdmInflux.Client;
 using AdmInflux.Client.Models;
@@ -20,16 +21,21 @@ namespace AdmInflux.Controllers
         [HttpGet("{database}")]
         public async Task<IActionResult> Get(string server, string database)
         {
+            var series = await _client.Series.Cardinality(server, database);
+
+            series.Select(s => new MeasurementSeriesViewModel {Measurement = s.Name, Count = s.Count});
+
             var (measurements, retentionPolicies) = await Tasks.Multi(
-                _client.Measurements.List(server, database),
+                _client.Series.Cardinality(server, database),
                 _client.RetentionPolicies.List(server, database)
-                ).ConfigureAwait(false);
-            
+            ).ConfigureAwait(false);
+
             var vm = new DatabaseViewModel
             {
                 Server = server,
-                Name = database, 
-                Measurements = measurements ?? Array.Empty<Measurement>(),
+                Name = database,
+                Measurements = measurements?.Select(s => new MeasurementSeriesViewModel {Measurement = s.Name, Count = s.Count}).ToArray() ??
+                               Array.Empty<MeasurementSeriesViewModel>(),
                 RetentionPolicies = retentionPolicies ?? Array.Empty<RetentionPolicy>()
             };
             return View(vm);
